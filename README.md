@@ -114,57 +114,5 @@ A(n), n <=500. Розробити програму, яка обчислює су
 
 ##Код
 ```cpp
-#include <iostream>
-#include <vector>
 
-using namespace std;
-
-int main() {
-    int n;
-    cout << "Введіть кількість елементів масиву (n <= 500): ";
-    cin >> n;
-
-    if (n <= 0 || n > 500) {
-        cout << "Невірний розмір масиву!" << endl;
-        return 1;
-    }
-
-    vector<int> A(n);
-    cout << "Введіть елементи масиву: ";
-    for (int i = 0; i < n; ++i) {
-        cin >> A[i];
-    }
-
-    int first_negative_index = -1;
-    int last_negative_index = -1;
-
-    for (int i = 0; i < n; ++i) {
-        if (A[i] < 0) {
-            first_negative_index = i;
-            break;
-        }
-    }
-
-    for (int i = n - 1; i >= 0; --i) {
-        if (A[i] < 0) {
-            last_negative_index = i;
-            break;
-        }
-    }
-
-    if (first_negative_index == -1 || last_negative_index == -1 || first_negative_index == last_negative_index) {
-        cout << "Від'ємних чисел немає або є тільки одне." << endl;
-        return 0;
-    }
-
-    int sum = 0;
-    for (int i = first_negative_index + 1; i < last_negative_index; ++i) {
-        sum += A[i];
-    }
-
-    cout << "Сума елементів між першим і останнім від'ємними елементами: " << sum << endl;
-    cout << "Діапазон: [" << first_negative_index + 1 << ", " << last_negative_index - 1 << "]" << endl;
-
-    return 0;
-}
 ```
