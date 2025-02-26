@@ -148,7 +148,7 @@ int main() {
             sum += A[i];
         }
         std::cout << "Сума елементів між першим і останнім від'ємними елементами: " << sum << std::endl;
-        std::cout << "Діапазон: від " << first_negative + 2 << " до " << last_negative << std::endl;
+        std::cout << "Діапазон: від " << first_negative + 1 << " до " << last_negative << std::endl;
     }
 
     return 0;
